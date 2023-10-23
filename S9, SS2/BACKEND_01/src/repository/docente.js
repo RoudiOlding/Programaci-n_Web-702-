@@ -1,10 +1,8 @@
-import docenteControler from "../controllers/docente.3";
-
 let docentes = [{
     id: 1,
     nombre: "Juan",
     apellido: "Perez",
-    curso: "Programacion web"
+    curso: "Programación Web"
 },{
     id: 2,
     nombre: "Sandra",
@@ -17,10 +15,39 @@ const findAll = () => {
 }
 
 const create = (docente) => {
-    docente.push(docente)
+    docentes.push(docente)
     return docente;
 }
 
-const docenteRepository = { findAll }
+const findOne = (id) => {
+    const result = docentes.find(x => x.id == id);
+    return result;
+}
+
+const update = (docente) => {
+    const index = docentes
+        .findIndex(item => item.id === docente.id);
+
+    if (index > -1) {
+        docentes[index] = docente;
+        return docente;
+    } else {
+        return null;
+    }
+    
+}
+
+const remove = (id) => {
+    const index = docentes.findIndex(item => item.id == id);
+
+    if (index > -1) {
+        docentes.splice(index,1);
+        return true;
+    } else  
+        return false;
+
+}
+
+const docenteRepository = { findAll, create, findOne, update,remove }
 
 export default docenteRepository;
