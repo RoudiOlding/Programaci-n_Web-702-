@@ -48,6 +48,6 @@ const remove = (id) => {
 
 }
 
-const docenteRepository = { findAll, create, findOne, update,remove }
+const docenteRepository = { findAll, create, findOne, update, remove }
 
 export default docenteRepository;
