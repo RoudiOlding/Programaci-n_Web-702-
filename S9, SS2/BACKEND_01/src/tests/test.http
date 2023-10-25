@@ -1,7 +1,13 @@
 GET http://localhost:3001/docente
 ##########
 
+GET http://localhost:3001/alumno
+##########
+
 GET http://localhost:3001/docente/2
+##########
+
+GET http://localhost:3001/alumno/2
 ##########
 
 POST http://localhost:3001/docente/
@@ -12,6 +18,18 @@ Content-Type: application/json
     "nombre": "Pedro",
     "apellido": "Gomez",
     "curso": "Arquitectura de datos"
+}
+
+##########
+
+POST http://localhost:3001/alumno/
+Content-Type: application/json
+
+{
+    "nombre": "Emma",
+    "apellido": "Olding",
+    "id": 20200652,
+    "carrera": "solo ver"
 }
 
 ###########
@@ -25,6 +43,21 @@ Content-Type: application/json
     "curso": "Derecho Penal"
 }
 
+###########
+
+PUT http://localhost:3001/alumno/
+Content-Type: application/json
+
+{
+    "nombre": "Emma",
+    "apellido": "Olding",
+    "id": ,
+    "carrera": "solo ver y ver"
+}
+
+
 #############
 DELETE http://localhost:3001/docente/1
 
+#############
+DELETE http://localhost:3001/docente/3
