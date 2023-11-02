@@ -1,0 +1,62 @@
+<html>
+    <body>
+        <div id="app"></div>
+
+        <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+        <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+        <script type="text/jsx">
+            const app = document.getElementById('app');
+
+            function Principal(){
+                return <h2>Lista de videojuegos</h2>
+            }
+
+            function Descripcion(){
+                return <p>Aquí encontrará una lista de los mejores juegos de 2023</p>
+            }
+
+            function ListaJuegos({juegos}){
+                return (
+                    <div>
+                        <ul>
+                            {juegos.map(item =>(
+                                <li key={item}>{item}</li>
+                            ))}
+                        </ul>
+                    </div>
+                )
+            }
+
+            function HomePage() {
+                const [contador, setContador] = React.useState(0);
+
+                function handleOnContador(){
+                    setContador(contador + 1);
+                }
+
+                function handleOnContador2(){
+                    setContador(contador + 2)
+                }
+                
+                const juegos = ["Hogwarts Legacy", "Final Fantasy XI", "The legend of Zelda: Tears of the Kingdom",
+                    "Spiderman 2", "Mario Wonders", "Alan Wake 2"];
+                
+                return (
+                    <main>
+                        <Principal />
+                        <Descripcion />
+                        <ListaJuegos juegos={juegos} />
+                        <p>N°Juegos: {contador}</p>
+                        <button onClick={handleOnContador}>Agrega un juego!</button>
+                        <button onClick={handleOnContador2}>Agrega dos juegos!</button>
+                    </main>
+                )
+            }
+
+            ReactDOM.render(<HomePage />, app);
+        </script>
+    </body>
+</html>

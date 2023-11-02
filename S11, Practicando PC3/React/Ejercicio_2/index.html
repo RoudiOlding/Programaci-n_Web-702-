@@ -1,0 +1,32 @@
+<html>
+    <body>
+        <div id="app"></div>
+
+        <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+        <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+        <script type="text/jsx">
+            const app = document.getElementById('app');
+
+            function Header(){
+                return <h1> HOLA EMMA </h1>;
+            }
+
+            function Parrafo(){
+                return <p>Alguien normal, que a veces podrá hacer cosas geniales</p>
+            }
+            function HomePage() {
+                return (
+                <main>
+                    <Header />
+                    <Parrafo />
+                </main>
+                )
+            }
+
+            ReactDOM.render(<HomePage />, app);
+        </script>
+    </body>
+</html>
