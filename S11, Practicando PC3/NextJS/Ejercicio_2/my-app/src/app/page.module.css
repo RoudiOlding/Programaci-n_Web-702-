@@ -1,0 +1,8 @@
+.main {
+  background-color: rgb(252, 124, 115);
+  padding-bottom: 1em;
+  padding-left: 2em;
+  padding-top: 1em;
+  display: flex;
+  flex-direction: column;
+}
